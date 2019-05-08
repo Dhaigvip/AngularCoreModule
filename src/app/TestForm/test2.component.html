@@ -1,0 +1,248 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" class="form-horizontal p-h-xs">
+  <div class="row padding">
+    <tcm-card [options]="{title:'Fund Information', subtitle:'Edit fund information'}">
+      <tcm-panel [options]="{id:'panel-1', title:'Fund Information'}">
+        <div class="col-md-3 col-lg-five col-sm-4 col-xs-12">
+          <auto-complete [(selectedObject)]="Account"
+                         [options]="acc_SearchOptions"
+                         [disabled]="true"
+                         [getData]="searchAccounts"></auto-complete>
+        </div>
+        <div class="col-md-3 col-lg-five col-sm-4 col-xs-12">
+          <auto-complete [(selectedObject)]="Fund" #t="auto-complete"
+                         [options]="fund_SearchOptions"
+                         [getData]="searchFunds"></auto-complete>
+        </div>
+        <div class="col-md-3">
+          <simple-auto-complete [(selectedObject)]="Fund2"
+                                [options]="fund_SearchOptions"
+                                [getData]="searchFunds"></simple-auto-complete>
+        </div>
+        <responsive-div>
+          <mat-form-field class="full-width">
+            <input matInput placeholder="{{ 'FirstName' | translate}}"
+                   #FirstName="ngModel"
+                   [ngModel]="Customer?.OriginalOrder?.Holder?.Identity.FirstName"
+                   (ngModelChange)="Customer?.OriginalOrder.Holder.Identity.FirstName"
+                   name="FirstName"
+                   id="FirstName" required>
+            <mat-error *ngIf="FirstName.invalid && (FirstName.dirty || FirstName.touched)">
+              {{ 'Name' | translate}} is
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </responsive-div>
+        <responsive-div>
+          <mat-form-field class="full-width">
+            <input matInput placeholder="{{ 'TCMTime' | translate}}"
+                   [ngModel]="testObj.Identification.time24"
+                   (ngModelChange)="testObj.Identification.time24=$event"
+                   name="tt1"
+                   id="tt1" tcm-time>
+          </mat-form-field>
+        </responsive-div>
+        <responsive-div>
+          <mat-form-field class="full-width">
+            <input matInput placeholder="{{ 'LastName' | translate}}"
+                   [ngModel]="Customer?.OriginalOrder?.Holder?.Identity.LastName"
+                   (ngModelChange)="Customer?.OriginalOrder.Holder.Identity.LastName"
+                   name="LastName"
+                   id="LastName">
+          </mat-form-field>
+        </responsive-div>
+        <responsive-div>
+          <mat-form-field class="full-width">
+            <input matInput placeholder="{{ 'LastName' | translate}}"
+                   [ngModel]="Customer?.OriginalOrder?.Holder?.Identity.LastName"
+                   (ngModelChange)="Customer?.OriginalOrder.Holder.Identity.LastName"
+                   name="LastName1"
+                   id="LastName1">
+          </mat-form-field>
+        </responsive-div>
+        <responsive-div>
+          <tcm-input [options]="{placeholder:'FirstName', focus:true, helpText:'helpText', hintLabel:'hintLabel',
+                     hintText:'hintText', minlength:2, maxlength:4,
+                     id: 'firstname', isRequired:true, isDisabled:true}"
+                     [val]="testObj.Identification.FirstName"
+                     (valueChange)="testObj.Identification.FirstName=$event"></tcm-input>
+        </responsive-div>
+
+        <responsive-div>
+          <tcm-check [options]="{class:'full-width-90', placeholder:'placeholder', id: 'ok'}"
+                     [val]="testObj.Identification.Ok"
+                     (valueChange)="testObj.Identification.Ok=$event"></tcm-check>
+        </responsive-div>
+        <div class="row">
+          <responsive-div>
+            <h2>Numbers</h2>
+            <mat-form-field class="full-width">
+              <input matInput placeholder="{{ 'TwoDecimal' | translate}}"
+                     [ngModel]="testObj.Identification.twoDecimals"
+                     (ngModelChange)="testObj.Identification.twoDecimals=$event"
+                     type="text"
+                     name="num2"
+                     id="num2" tcm-number decimalPlaces="2">
+            </mat-form-field>
+            <p>{{testObj.Identification.twoDecimals}}</p>
+            <mat-form-field class="full-width">
+              <input matInput placeholder="{{ 'NumberTest' | translate}}"
+                     [ngModel]="testObj.Identification.Age"
+                     (ngModelChange)="testObj.Identification.Age=$event"
+                     type="text"
+                     name="num"
+                     id="num" tcm-number>
+            </mat-form-field>
+            <p>{{testObj.Identification.Age}}</p>
+            <mat-form-field class="full-width">
+              <input matInput placeholder="{{ 'NullNumberTest' | translate}}"
+                     [ngModel]="testObj.nullobj"
+                     (ngModelChange)="testObj.nullobj=$event"
+                     type="text"
+                     name="nullnum"
+                     id="nullnum" tcm-number>
+            </mat-form-field>
+            <p>{{testObj.nullobj}}</p>
+          </responsive-div>
+        </div>
+        <!--<responsive-div>
+          <timepicker [time]="testObj.time24" (timeChange)="testObj.time24"></timepicker>
+        </responsive-div>-->
+
+        <responsive-div>
+          <tcm-input [options]="{type:'date', placeholder:'date Test', hintLabel:'test', hintText:'Hint text', id: 'date1', isRequired:true}"
+                     [val]="testObj.Identification.InbuildDate"
+                     (valueChange)="testObj.Identification.InbuildDate=$event"></tcm-input>
+        </responsive-div>
+        <responsive-div>
+          <tcm-input [options]="{type:'datetime-local', placeholder:'date Test', hintLabel:'test', hintText:'Hint text', id: 'date2', isRequired:true}"
+                     [val]="testObj.Identification.InbuildDatelocal"
+                     (valueChange)="testObj.Identification.InbuildDatelocal=$event"></tcm-input>
+        </responsive-div>
+        <responsive-div>
+          <tcm-input [options]="{type:'time', placeholder:'time Test', hintLabel:'test', hintText:'Hint text', id: 'time1', isRequired:true}"
+                     [val]="testObj.Identification.time1"
+                     (valueChange)="testObj.Identification.time1=$event"></tcm-input>
+        </responsive-div>
+        <responsive-div>
+          <tcm-date [options]="{placeholder:'materialDate1 Test', hintLabel:'test', hintText:'Hint text', id: 'materialDate1', isRequired:true}"
+                    [val]="testObj.Identification.materialDate1"
+                    (valueChange)="testObj.Identification.materialDate1=$event"></tcm-date>
+        </responsive-div>
+        <responsive-div>
+          <tcm-date [options]="{placeholder:'materialDate2 Test', hintLabel:'test', hintText:'Hint text', id: 'materialDate2', isRequired:true}"
+                    [val]="testObj.Identification.materialDate2"
+                    (valueChange)="testObj.Identification.materialDate2=$event"></tcm-date>
+        </responsive-div>
+        <responsive-div>
+          <tcm-select [options]="{placeholder:'Test', id: 'city', isDisabled:true, isRequired:true, ItemName:'FUND_TYPE', ismultiple:false}"
+                      [val]="testObj.Identification.City"
+                      (valueChange)="testObj.Identification.City=$event"></tcm-select>
+        </responsive-div>
+        <responsive-div>
+          <tcm-select [options]="{class:'full-width-90', placeholder:'City', isDisabled:true, id: 'city1', isRequired:true, ItemName:'FUND_TYPE', ismultiple:false}"
+                      [val]="testObj.Identification.City"
+                      (valueChange)="testObj.Identification.City=$event"></tcm-select>
+        </responsive-div>
+
+      </tcm-panel>
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Fund overview</h4>
+          <table class="table table-bordered">
+            <tbody>
+              <tr class="color-content">
+                <td style="color:#000;width: 27%;">Sponsor Name</td>
+                <td>L&amp;T Finance Holdings Limited.</td>
+
+              </tr>
+              <tr class="color-content">
+                <td style="color:#000;width: 27%;">Fund Manager</td>
+                <td class="ng-binding">Mr. Soumendra Nath Lahiri</td>
+              </tr>
+              <tr class="color-content">
+                <td style="color:#000;width: 27%;">Since</td>
+                <td class="ng-binding">07/08/2007</td>
+              </tr>
+
+              <tr class="color-content">
+                <td style="color:#000;width: 27%;">Setup Date</td>
+                <td class="ng-binding">07/08/2007</td>
+              </tr>
+              <tr class="color-content">
+                <td style="color:#000;width: 27%;">Phone</td>
+                <td class="ng-binding">66554000</td>
+              </tr>
+              <tr class="color-content">
+                <td style="color:#000;width: 27%;">Address</td>
+                <td class="ng-binding">6th Floor,Brindavan, Plot No 177,CST Road, Kalina, Santacruz (E)</td>
+              </tr>
+              <tr class="color-content">
+                <td style="color:#000;width: 27%;">Email</td>
+                <td class="ng-binding">investor.line@lntmf.co.in</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+        <div class="col-md-6">
+          <h4>Fund overview</h4>
+          <table class="table table-bordered">
+            <tbody>
+              <tr class="color-content">
+                <td style="color:#000;width: 27%;">Sponsor Name</td>
+                <td class="ng-binding">L&amp;T Finance Holdings Limited.</td>
+              </tr>
+              <tr class="color-content">
+                <td style="color:#000;width: 27%;">Fund Manager</td>
+                <td class="ng-binding">Mr. Soumendra Nath Lahiri</td>
+              </tr>
+              <tr class="color-content">
+                <td style="color:#000;width: 27%;">Since</td>
+                <td class="ng-binding">07/08/2007</td>
+              </tr>
+              <!--
+                                  <tr class="color-content">
+                                      <td style="color:#000;width: 27%;">Status</td>
+                                      <td>{{otherdetails.Status}}</td>
+                                  </tr>
+              -->
+              <tr class="color-content">
+                <td style="color:#000;width: 27%;">Setup Date</td>
+                <td class="ng-binding">07/08/2007</td>
+              </tr>
+              <tr class="color-content">
+                <td style="color:#000;width: 27%;">Phone</td>
+                <td class="ng-binding">66554000</td>
+              </tr>
+              <tr class="color-content">
+                <td style="color:#000;width: 27%;">Address</td>
+                <td class="ng-binding">6th Floor,Brindavan, Plot No 177,CST Road, Kalina, Santacruz (E)</td>
+              </tr>
+              <tr class="color-content">
+                <td style="color:#000;width: 27%;">Email</td>
+                <td class="ng-binding">investor.line@lntmf.co.in</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="row">
+        <button type="submit" [disabled]="!f.valid" [ngClass]="'btn-' + theme" class="btn">{{'Save'|translate}}</button>
+        <button (click)="save2()"  [ngClass]="'btn-' + theme" class="btn">{{'Save2'|translate}}</button>
+        <button type="button" (click)="ResetAutoComplete()">{{'ResetAutocomplete'|translate}}</button>
+      </div>
+    </tcm-card>
+    <div>
+      {{testObj|json}}
+    </div>
+    <div>
+      Fund {{Fund|json}}
+    </div>
+    <div>
+      Account {{Account|json}}
+    </div>
+  </div>
+
+</form>

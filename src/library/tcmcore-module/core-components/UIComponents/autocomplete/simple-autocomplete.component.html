@@ -1,0 +1,19 @@
+<div class="form-group has-success has-feedback">
+
+  <!--<span class="input-group-addon">@</span>-->
+  <input type="text" class="form-control"
+         [matAutocomplete]="auto" [formControl]="bb" [ngModel]="objSearch"
+         [required]="options.required"
+         placeholder="{{options.placeholder}}"
+         name="{{options.id}}" id="{{options.id}}"
+         [disabled]="options.required">
+  <!--<span class="glyphicon glyphicon-ok form-control-feedback"></span>-->
+
+  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayObject" panelWidth="400px"
+                    (optionSelected)="ObjectSelected($event)">
+    <mat-option *ngFor="let obj of ObjList" [value]="obj">
+      <span class="small">{{GetObjectValue(obj, options.displayProp)}}</span>
+      <span class="small" *ngIf="options?.displayProp2 != null"> - {{GetObjectValue(obj, options.displayProp2)}}</span>
+    </mat-option>
+  </mat-autocomplete>
+</div>

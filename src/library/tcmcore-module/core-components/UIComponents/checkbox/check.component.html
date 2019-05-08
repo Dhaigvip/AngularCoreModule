@@ -1,0 +1,7 @@
+  <mat-checkbox [ngClass]="options.class? options.class : 'full-width-90'"
+                [ngModel]="val"
+                id="{{options?.id}}"
+                name="{{options?.id}}"
+                #ctrl="ngModel">
+    {{ options?.placeholder | translate}}
+  </mat-checkbox>

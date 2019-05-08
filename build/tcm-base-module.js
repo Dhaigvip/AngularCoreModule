@@ -1,0 +1,10 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
+ * Generated bundle index. Do not edit.
+ */
+export { createConfig, TCMCoreModule, FooterComponent, NavbarComponent, SettingsComponent, VerticleNavbarComponent, Errorpage, PagenotFoundComponent, SignInComponent, SignUpComponent, AutoHeightDirective, ErrorDivComponent, myCustomTooltipDefaults, TCMMaterialModule, DataService, AuthService, DashboardService, MessageService, ClientContext, UserCredentials, CacheData, MasterData, CacheObject, UserSettings, DashboardViewType, DashboardData, PageSettings, ControlSettings, ContactDetails, MessageState, MessageAttachment, MessageWrapper, ExportInput, ExportColumn, KeyRequest, CacheOption, ClientRequestDTO, ErrorDTO, ClientResponseDTO, ThemeColors, CardContainer, PanelContainer, AutoCompleteOptions, InputControlOptions, SelectControlOptions, SearchRepository, WindowRef, UserSettingsService, StaticDataService, AppBootstrap, ModuleBaseComponent, TCMCacheService, AppContextComponent, ContainerComponent, DashboardServiceCore, AutoCompleteComponent, InputComponent, NumberComponent, tcmnumber, ScrollSpyDirective, SelectComponent, CheckboxComponent, DateComponent, PanelContainerComponent, CardContainerComponent, ResponsiveDivComponent, TimePickerComponent, PagenotAutheticatedComponent, SimpleAutoCompleteComponent, ConfigService, NavigationService, LoaderService, ThemeService, LogService, TCMErrorStateMatcher, ConfirmComponent, ErrorPopupComponent, Inbox, InboxList, BaseChartDirective, ChartsModule, AngularSplitModule, SplitComponent, SplitAreaDirective, CoreActionTypes, TCMMessageReceived, DashboardMessageReceived, SetCurrentInboxItem, CoreEffects, CoreReducer, getInboxItems, getSelectedInboxItem, getDashboardItems, AppBootstrapCore, AuthServiceCore, DataServiceCore, FocusDirective, Utilities, StringConverter, BooleanConverter, NumberConverter, InputConverter, AuthGuard, VoiceSearch } from './index';
+export { GlobalErrorHandler as ɵb } from './tcmcore-module/core-services/tcmcore.globalerrorhandler.service';
+export { CORE_ROUTES as ɵa } from './tcmcore.route.config';

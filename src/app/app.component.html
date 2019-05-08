@@ -1,0 +1,16 @@
+<div class="app">
+  <div class="app-content" id="content">
+    <div class="box">
+      <navbar-cmp class="navbar-fixed-on-scroll" [showSettings]="true" [showNotification]="true" [showVoiceSearch]="true"></navbar-cmp>
+      <div class="box-row">
+        <div class="box-cell">
+          <div class="box-inner" id="view">
+            <router-outlet></router-outlet>
+            <span *ngIf="showLoader" class="loading"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <appcontext-cmp></appcontext-cmp>
+</div>

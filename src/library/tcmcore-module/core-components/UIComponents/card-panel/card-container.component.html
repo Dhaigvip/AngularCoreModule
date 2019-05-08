@@ -1,0 +1,9 @@
+<div class="card">
+  <div class="card-header" [attr.data-background-color]="options?.color ? options.color : color">
+    <h4 class="title" *ngIf="options?.title">{{options?.title | translate}}</h4>
+    <p class="category" *ngIf="options?.subtitle">{{options?.subtitle | translate}}</p>
+  </div>
+  <div class="card-content">
+    <ng-content></ng-content>
+  </div>
+</div>

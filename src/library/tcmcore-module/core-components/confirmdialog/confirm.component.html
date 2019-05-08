@@ -1,0 +1,19 @@
+<div mat-dialog-title>Confirm</div>
+<mat-dialog-content>
+  <p>{{data.message}}</p>
+
+</mat-dialog-content>
+
+<div class="dialog-bottom">
+  <div class=" pull-right">
+    <button class="btn-dialog"
+            type="button" (click)="onClose(true)">
+      Yes
+    </button>
+    <button class="btn-dialog"
+            type="button" (click)="onClose(false)">
+      No
+    </button>
+  </div>
+</div>
+

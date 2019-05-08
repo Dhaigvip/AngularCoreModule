@@ -1,0 +1,32 @@
+<!--<mat-form-field [ngClass]="options.class? options.class : 'full-width-90'">
+  <mat-hint align="end">
+    <strong>{{options?.hintText ? (options.hintText | translate) : ''}}</strong>
+  </mat-hint>
+  <mat-hint align="start">
+    {{options?.hintLabel ? (options.hintLabel | translate) : ''}}
+  </mat-hint>
+  <button type="button" matSuffix mat-icon-button
+          aria-label="Clear" (click)="val=''">
+    <mat-icon>close</mat-icon>
+  </button>
+  <i *ngIf="options?.helpText != null" matSuffix style="cursor:help; color: #FB8C00;" matTooltip="{{options?.helpText}}"
+     matTooltipClass="tooltip-x" class="material-icons md-light">help</i>
+  <input matInput placeholder="{{ options?.placeholder | translate}}"
+         [type]="text"
+         [ngModel]="val"
+         id="{{options?.id}}"
+         name="{{options?.id}}"
+         #ctrl="ngModel"
+         [errorStateMatcher]="matcher"
+         [required]="options?.isRequired">
+  <mat-error *ngIf="ctrl.hasError('required')">
+    <strong>{{ options?.placeholder | translate}} {{validationMessages.required}}</strong>
+  </mat-error>
+  <mat-error *ngIf="ctrl.hasError('minlength')">
+    <strong> {{options?.minlength}} {{validationMessages.minlength}}</strong>
+  </mat-error>
+  <mat-error *ngIf="ctrl.hasError('maxlength')">
+    <strong> {{options?.maxlength}} {{validationMessages.maxlength}}</strong>
+  </mat-error>
+
+</mat-form-field>-->

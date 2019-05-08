@@ -1,0 +1,21 @@
+<mat-form-field [ngClass]="options.class? options.class : 'full-width-90'">
+  <mat-select placeholder="{{ options?.placeholder | translate}}"
+              [ngModel]="val"
+              id="{{options?.id}}"
+              name="{{options?.id}}"
+              #ctrl="ngModel"
+              [multiple]="options?.ismultiple"
+              [errorStateMatcher]="matcher"
+              [required]="options?.isRequired"
+              [disabled]="options?.isDisabled">
+    <mat-option [value]="null">
+      ---
+    </mat-option>
+    <mat-option *ngFor="let option of GetStaticDataItems(options?.ItemName)" [value]="option.Code">
+      {{ option.Text | translate}}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="ctrl.hasError('required')">
+    <strong>{{validationMessages.requiredselection}}</strong>
+  </mat-error>
+</mat-form-field>

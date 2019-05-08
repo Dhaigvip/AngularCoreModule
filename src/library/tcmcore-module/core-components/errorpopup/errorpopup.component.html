@@ -1,0 +1,28 @@
+<div mat-dialog-title>Error</div>
+<mat-dialog-content>
+  <div class="alert alert-danger" *ngIf="Errors">
+    <div class="container-fluid">
+      <div class="alert-icon">
+        <i class="material-icons">error_outline</i>
+      </div>
+      <button (click)="close()" type="button" class="close" aria-label="Close">
+        <span aria-hidden="true"><i class="material-icons">clear</i></span>
+      </button>
+      <b>Error Alert:</b>
+      <ul type="disc">
+        <li *ngFor="let err of Errors">
+          {{err.ErrorMessage}}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</mat-dialog-content>
+
+<div class="dialog-bottom"> 
+  <button class="btn-dialog"
+          type="button" (click)="onClose(false)">
+    Close
+  </button>
+</div>
+

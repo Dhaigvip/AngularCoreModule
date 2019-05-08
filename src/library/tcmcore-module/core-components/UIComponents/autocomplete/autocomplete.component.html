@@ -1,0 +1,30 @@
+<mat-form-field class="full-width" [ngClass]="[options.class? options.class : 'full-width',errorMsgSearch ? 'error-text':'default-text']">
+  <mat-icon *ngIf="selectedObject == null" matPrefix>search</mat-icon>
+  <mat-icon *ngIf="selectedObject != null" matPrefix style="color: green;font-weight: bolder;font-size: 24px;">check</mat-icon>
+  <mat-hint align="end" [ngClass]="{'default-text': errorMsgSearch === '', 'error-text': errorMsgSearch !== ''}">
+    <strong>{{errorMsgSearch ? errorMsgSearch : (selectedObject ? GetObjectValue(selectedObject, options.hintProp):'')}}</strong>
+  </mat-hint>
+  <mat-hint align="start">
+    {{options.hintLabel ? options.hintLabel : ''}}
+  </mat-hint> 
+  <button type="button" *ngIf="selectedObject != null" matSuffix mat-icon-button aria-label="Clear" (click)="clearObject()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <!--<button matSuffix mat-icon-button aria-label="settings" (click)="GetObjProps()">
+    <mat-icon>settings</mat-icon>
+  </button>-->
+  <i *ngIf="options?.helpText != null" matSuffix style="cursor:help; color: #FB8C00;" matTooltip="{{options.helpText}}"
+     matTooltipClass="tooltip-x" class="material-icons md-light">help</i>
+  <mat-label>{{options.label}}</mat-label>
+  <input matTooltip="{{selectedObject ? GetObjectValue(selectedObject, options.tooltipProp):''}}" matInput name="{{options.id}}" id="{{options.id}}"
+         [matAutocomplete]="auto" [formControl]="bb" [ngModel]="objSearch"
+         [errorStateMatcher]="matcher" [required]="options.required"
+         [disabled]="options.required" />
+
+  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayObject" panelWidth="400px"
+                    (optionSelected)="ObjectSelected($event)">
+    <mat-option *ngFor="let obj of ObjList" [value]="obj">
+      <span class="small">{{GetObjectValue(obj, options.displayProp)}}</span>
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>

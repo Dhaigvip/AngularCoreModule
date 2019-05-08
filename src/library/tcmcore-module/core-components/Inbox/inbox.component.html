@@ -1,0 +1,26 @@
+<div class="row padding">
+  <!--<div class="col-md-1">
+      <div class="hidden-sm hidden-xs" id="inbox-menu">
+          <ul class="nav nav-pills nav-stacked nav-sm">
+              <li *ngFor="let fold of folds" routerLinkActive="active">
+                  <a routerLink="inboxlist/{{fold.id}}">
+                      {{fold.name}}
+                  </a>
+              </li>
+          </ul>
+          <div class="p-v">Labels</div>
+          <ul class="nav nav-pills nav-stacked nav-sm">
+              <li *ngFor="let label of labels" routerLinkActive="active" [ngClass]="labelClass(label.name.toLowerCase())">
+                  <a>
+                      <i class="fa fa-fw fa-circle text-muted"></i>
+                      {{label.name}}
+                  </a>
+              </li>
+          </ul>
+
+      </div>
+  </div>-->
+  <!--<div class="col-md-12">-->
+  <router-outlet></router-outlet>
+  <!--</div>-->
+</div>

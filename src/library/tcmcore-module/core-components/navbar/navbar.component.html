@@ -1,0 +1,63 @@
+<div id="mainNav" class="navbar" [ngClass]="'navbar-'+ theme" style="margin-bottom:0px">
+
+  <div class="container" style="float:left !important">
+    <div class="navbar-header">
+
+      <button type="button" class="navbar-toggle"
+              aria-expanded="false"
+              aria-controls="navmenu" (click)="isCollapsed=!isCollapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand pull-left" target="_blank" [routerLink]="homePath" style="margin-right: 50px;">
+        <img style="max-height: 36px;" alt="." src="assets/img/Tieto_logo_white.png">
+      </a>
+    </div>
+
+    <div class="navbar-collapse" [ngClass]="{'collapse':isCollapsed}" id="navmenu">
+      <ul class="nav navbar-nav">
+        <li *ngFor="let menuItem of listTitles" routerLinkActive="active" class="{{menuItem.class}}">
+          <a [routerLink]="[menuItem.path]" *ngIf="menuItem.display">
+            <p>{{translateDecode(menuItem.title)}}</p>
+          </a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li *ngIf="showVoiceSearch">
+          <a (click)="openDialogVoice()">
+            <i class="material-icons">settings_voice</i>
+          </a>
+        </li>
+        <li *ngIf="showNotification">
+          <a routerLink="inbox">
+            <i class="material-icons">add_alert</i>
+            <b class="badge bg-danger up">{{(inboxItems | async)?.length}}</b>
+          </a>
+        </li>
+        <li style ="cursor: default;"> 
+          <span style="margin-right:20px">
+            <i class="material-icons" >account_circle</i>
+            {{userName}}
+          </span>
+        </li>
+        <li *ngIf="showSettings">
+          <a (click)="openDialog()">
+            <i class="material-icons">settings</i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="box-cell md-whiteframe-z1 no-radius" id="subnav">
+  <ul class="subNav">
+    <!-- ngRepeat: n in nav -->
+    <li routerLinkActive="active" class="{{submenuItem.class}}" *ngFor="let submenuItem of menuItem.children">
+      <a routerLink="{{menuItem.path}}/{{submenuItem.path}}" *ngIf="submenuItem.display">
+        {{translateDecode(submenuItem.title)}}
+      </a>
+    </li>
+  </ul>
+</div>

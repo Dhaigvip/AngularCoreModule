@@ -1,0 +1,593 @@
+﻿[
+  {
+    "GroupCode": "FUND_TYPE",
+    "Items": [
+      {
+        "Code": "EQUITY",
+        "Text": "Aktiefond"
+      },
+      {
+        "Code": "BOND",
+        "Text": "Räntefond"
+      },
+      {
+        "Code": "MNYMARKET",
+        "Text": "Penningmarknadsfond"
+      },
+      {
+        "Code": "MIXED",
+        "Text": "Blandfond"
+      },
+      {
+        "Code": "HEDGE",
+        "Text": "Hedgefond"
+      },
+      {
+        "Code": "SPECIAL",
+        "Text": "Specialfond"
+      },
+      {
+        "Code": "UNKNOWN",
+        "Text": "Okänd"
+      }
+    ]
+  },
+  {
+    "GroupCode": "EUSD_SCOPE",
+    "Items": [
+      {
+        "Code": "EUSI",
+        "Text": "Omfattas"
+      },
+      {
+        "Code": "EUSO",
+        "Text": "Omfattas ej"
+      },
+      {
+        "Code": "VARI",
+        "Text": "Variabel"
+      }
+    ]
+  },
+  {
+    "GroupCode": "FREQUENCY",
+    "Items": [
+      {
+        "Code": "YEAR",
+        "Text": "Årligen"
+      },
+      {
+        "Code": "MIAN",
+        "Text": "Delårsvis"
+      },
+      {
+        "Code": "QUTR",
+        "Text": "Kvartalsvis"
+      },
+      {
+        "Code": "MNTH",
+        "Text": "Månatligen"
+      },
+      {
+        "Code": "WEEK",
+        "Text": "Veckovis"
+      },
+      {
+        "Code": "DAIL",
+        "Text": "Dagligen"
+      },
+      {
+        "Code": "CLOS",
+        "Text": "Stängd"
+      },
+      {
+        "Code": "TOMN",
+        "Text": "Varannan månad"
+      },
+      {
+        "Code": "TOWK",
+        "Text": "Varannan vecka"
+      },
+      {
+        "Code": "TWMN",
+        "Text": "Två gånger per månad"
+      },
+      {
+        "Code": "ADHO",
+        "Text": "Ad hoc"
+      }
+    ]
+  },
+  {
+    "GroupCode": "TRANSFER_ALLOWED",
+    "Items": [
+      {
+        "Code": "TRAL",
+        "Text": "Överföring tillåten"
+      },
+      {
+        "Code": "TRNA",
+        "Text": "Överföring ej tillåten"
+      },
+      {
+        "Code": "RFOD",
+        "Text": "Kontakta orderdesken"
+      }
+    ]
+  },
+  {
+    "GroupCode": "ACCOUNT_TYPE",
+    "Items": [
+      {
+        "Code": "ORD",
+        "Text": "Vanligt fondkonto"
+      },
+      {
+        "Code": "ADJ",
+        "Text": "Justeringskonto"
+      },
+      {
+        "Code": "AGG",
+        "Text": "Aggregerat konto"
+      }
+    ]
+  },
+  {
+    "GroupCode": "TRANSACTION_MODE",
+    "Items": [
+      {
+        "Code": "1",
+        "Text": "Belopp"
+      },
+      {
+        "Code": "2",
+        "Text": "Andelar"
+      }
+    ]
+  },
+  {
+    "GroupCode": "TRANSACTION_MODE_CODE",
+    "Items": [
+      {
+        "Code": "AMOUNT",
+        "Text": "Belopp"
+      },
+      {
+        "Code": "UNITS",
+        "Text": "Andelar"
+      }
+    ]
+  },
+  {
+    "GroupCode": "ORDER_TYPE",
+    "Items": [
+      {
+        "Code": "SUB",
+        "Text": "Teckning"
+      },
+      {
+        "Code": "RED",
+        "Text": "Inlösen"
+      },
+      {
+        "Code": "ADJ",
+        "Text": "Justering"
+      }
+    ]
+  },
+  {
+    "GroupCode": "AGG_ORDER_TYPE",
+    "Items": [
+      {
+        "Code": "SUB",
+        "Text": "Teckning"
+      },
+      {
+        "Code": "RED",
+        "Text": "Inlösen"
+      }
+    ]
+  },
+  {
+    "GroupCode": "PAYMENT_ENTITY",
+    "Items": [
+      {
+        "Code": "DEBTOR",
+        "Text": "Debtor"
+      },
+      {
+        "Code": "DEBTOR_AGENT",
+        "Text": "Debtor agent"
+      },
+      {
+        "Code": "INTERMEDIARY1",
+        "Text": "Intermediary 1"
+      },
+      {
+        "Code": "INTERMEDIARY2",
+        "Text": "Intermediary 2"
+      },
+      {
+        "Code": "CREDITOR_AGENT",
+        "Text": "Creditor agent"
+      },
+      {
+        "Code": "CREDITOR",
+        "Text": "Creditor"
+      }
+    ]
+  },
+  {
+    "GroupCode": "CASH_ACCT_FORMAT",
+    "Items": [
+      {
+        "Code": "IBAN",
+        "Text": "IBAN"
+      },
+      {
+        "Code": "OTHR",
+        "Text": "Annat"
+      }
+    ]
+  },
+  {
+    "GroupCode": "CHARGE_BEARER",
+    "Items": [
+      {
+        "Code": "CRED",
+        "Text": "Mottagaren betalar"
+      },
+      {
+        "Code": "DEBT",
+        "Text": "Avsändaren betalar"
+      },
+      {
+        "Code": "SHAR",
+        "Text": "Delad"
+      },
+      {
+        "Code": "SLEV",
+        "Text": "Enligt serviceavtal"
+      }
+    ]
+  },
+  {
+    "GroupCode": "CURRENCY",
+    "Items": [
+      {
+        "Code": "SEK",
+        "Text": "SEK"
+      },
+      {
+        "Code": "EUR",
+        "Text": "EUR"
+      },
+      {
+        "Code": "GBP",
+        "Text": "GBP"
+      },
+      {
+        "Code": "USD",
+        "Text": "USD"
+      },
+      {
+        "Code": "NOK",
+        "Text": "NOK"
+      },
+      {
+        "Code": "JPY",
+        "Text": "JPY"
+      },
+      {
+        "Code": "CHF",
+        "Text": "CHF"
+      }
+    ]
+  },
+  {
+    "GroupCode": "FX_SYMBOL",
+    "Items": [
+      {
+        "Code": "EUR/SEK",
+        "Text": "EUR/SEK"
+      },
+      {
+        "Code": "GBP/SEK",
+        "Text": "GBP/SEK"
+      },
+      {
+        "Code": "USD/SEK",
+        "Text": "USD/SEK"
+      },
+      {
+        "Code": "NOK/SEK",
+        "Text": "NOK/SEK"
+      },
+      {
+        "Code": "JPY/SEK",
+        "Text": "JPY/SEK"
+      },
+      {
+        "Code": "CHF/SEK",
+        "Text": "CHF/SEK"
+      }
+    ]
+  },
+  {
+    "GroupCode": "COUNTRY",
+    "Items": [
+      {
+        "Code": "SE",
+        "Text": "Sverige"
+      },
+      {
+        "Code": "FI",
+        "Text": "Finland"
+      },
+      {
+        "Code": "NO",
+        "Text": "Norge"
+      },
+      {
+        "Code": "LU",
+        "Text": "Luxemburg"
+      },
+      {
+        "Code": "DK",
+        "Text": "Danmark"
+      },
+      {
+        "Code": "GB",
+        "Text": "Storbritannien"
+      },
+      {
+        "Code": "JP",
+        "Text": "Japan"
+      },
+      {
+        "Code": "CH",
+        "Text": "Schweiz"
+      },
+      {
+        "Code": "SG",
+        "Text": "Singapore"
+      },
+      {
+        "Code": "US",
+        "Text": "Amerikas förenta stater"
+      },
+      {
+        "Code": "EE",
+        "Text": "Estland"
+      },
+      {
+        "Code": "AT",
+        "Text": "Österrike"
+      },
+      {
+        "Code": "BE",
+        "Text": "Belgien"
+      },
+      {
+        "Code": "IE",
+        "Text": "Irland"
+      },
+      {
+        "Code": "DE",
+        "Text": "Tyskland"
+      },
+      {
+        "Code": "FR",
+        "Text": "Frankrike"
+      }
+    ]
+  },
+  {
+    "GroupCode": "DISTRIBUTION_CHANNEL",
+    "Items": [
+      {
+        "Code": "FAX",
+        "Text": "Fax"
+      },
+      {
+        "Code": "SWIFT",
+        "Text": "SWIFT"
+      }
+    ]
+  },
+  {
+    "GroupCode": "DISTRIBUTION_POLICY",
+    "Items": [
+      {
+        "Code": "DIST",
+        "Text": "Utdelande"
+      },
+      {
+        "Code": "ACCU",
+        "Text": "Ackumulerande"
+      }
+    ]
+  },
+  {
+    "GroupCode": "DIVIDEND_POLICY",
+    "Items": [
+      {
+        "Code": "UNIT",
+        "Text": "Andelar"
+      },
+      {
+        "Code": "CASH",
+        "Text": "Likvid"
+      },
+      {
+        "Code": "BOTH",
+        "Text": "Både andelar och likvid"
+      }
+    ]
+  },
+  {
+    "GroupCode": "DATE_TYPE",
+    "Items": [
+      {
+        "Code": "FLL",
+        "Text": "Affärsdag"
+      },
+      {
+        "Code": "HLF",
+        "Text": "Halvdag"
+      },
+      {
+        "Code": "NON",
+        "Text": "Ej affärsdag"
+      }
+    ]
+  },
+  {
+    "GroupCode": "LANGUAGE_CODE",
+    "Items": [
+      {
+        "Code": "41D",
+        "Text": "Svenska"
+      },
+      {
+        "Code": "809",
+        "Text": "Engelska"
+      }
+    ]
+  },
+  {
+    "GroupCode": "FUND_PRICE_TYPE",
+    "Items": [
+      {
+        "Code": "NAVL",
+        "Text": "NAV"
+      },
+      {
+        "Code": "SUBN",
+        "Text": "Teckningskurs"
+      },
+      {
+        "Code": "REDN",
+        "Text": "Inlösenkurs"
+      },
+      {
+        "Code": "ACTU",
+        "Text": "Verklig kurs"
+      },
+      {
+        "Code": "BIDE",
+        "Text": "Bid-kurs"
+      }
+    ]
+  },
+  {
+    "GroupCode": "CCY_PRICE_TYPE",
+    "Items": [
+      {
+        "Code": "SMI",
+        "Text": "Stated price"
+      },
+      {
+        "Code": "BID",
+        "Text": "Bid-kurs"
+      },
+      {
+        "Code": "ASK",
+        "Text": "Ask-kurs"
+      },
+      {
+        "Code": "MID",
+        "Text": "Mid-kurs"
+      }
+    ]
+  },
+  {
+    "GroupCode": "CCY_ORDER_TYPE",
+    "Items": [
+      {
+        "Code": "BUY",
+        "Text": "Köp"
+      },
+      {
+        "Code": "SEL",
+        "Text": "Sälj"
+      }
+    ]
+  },
+  {
+    "GroupCode": "PAYMENT_MSG_TYPE",
+    "Items": [
+      {
+        "Code": "MT103",
+        "Text": "MT103"
+      },
+      {
+        "Code": "MT202",
+        "Text": "MT202"
+      }
+    ]
+  },
+  {
+    "GroupCode": "CULTURE_CODE",
+    "Items": [
+      {
+        "Code": "sv-SE",
+        "Text": "Svenska"
+      },
+      {
+        "Code": "en-GB",
+        "Text": "Engelska"
+      }
+    ]
+  },
+  {
+    "GroupCode": "FUND_IDENTIFIER",
+    "Items": [
+      {
+        "Code": "SUS",
+        "Text": "SUS-avtalsnummer"
+      }
+    ]
+  },
+  {
+    "GroupCode": "RELATED_PARTY_CODE",
+    "Items": [
+      {
+        "Code": "FMCO",
+        "Text": "Fondförvaltare (FMCO)"
+      },
+      {
+        "Code": "REGI",
+        "Text": "Registrator (REGI)"
+      },
+      {
+        "Code": "TRAG",
+        "Text": "Transfer agent (TRAG)"
+      },
+      {
+        "Code": "INTR",
+        "Text": "Intermediär (INTR)"
+      },
+      {
+        "Code": "DIST",
+        "Text": "Distributör (DIST)"
+      },
+      {
+        "Code": "CONC",
+        "Text": "Koncentrator (CONC)"
+      },
+      {
+        "Code": "UCL1",
+        "Text": "Underliggande klient 1 (UCL1)"
+      },
+      {
+        "Code": "UCL2",
+        "Text": "Underliggande klient 2 (UCL2)"
+      },
+      {
+        "Code": "TRAN",
+        "Text": "Transmitting agent (TRAN)"
+      }
+    ]
+  }
+]

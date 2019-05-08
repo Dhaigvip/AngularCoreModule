@@ -1,0 +1,412 @@
+<div class="row padding">
+  <!--<div style="background-color:red;width:100px" auto-height>Vipul</div>-->
+  <form (ngSubmit)="saveForm()" #f="ngForm">
+    <span>message : {{obj | json}}</span>
+    <split [direction]="horizontal">
+      <split-area size="50">
+        <div class="col-md-12">
+          <tcm-card [options]="{color:'green', title:'Fund Information', subtitle:'Edit fund information'}">
+
+            <tcm-panel [options]="{id:'panel-1', title:'Fund Information'}">
+              <div class="col-md-3">
+                <mat-form-field class="full-width">
+                  <i matSuffix style="cursor:help; color: #FB8C00;" matTooltip="Help tip" matTooltipClass="tooltip-x" class="material-icons md-light">help</i>
+                  <input matInput placeholder="{{ 'How to show Help' | translate}}"
+                         id="name" name="name"
+                         [(ngModel)]="Customer.Name"
+                         [errorStateMatcher]="matcher" #name="ngModel"
+                         required maxlength="50">
+                  <mat-error *ngIf="name.invalid && (name.dirty || name.touched)">
+                    {{ 'Name' | translate}} is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+
+
+              </div>
+              <div class="col-md-3">
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="{{ 'ShortName' | translate}}"
+                         [(ngModel)]="Customer.ShortName" name="ShortName"
+                         id="ShortName">
+                </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="{{ 'LegalName' | translate}}"
+                         [(ngModel)]="Customer.LegalName" name="LegalName"
+                         id="LegalName">
+                </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="{{ 'Isin' | translate}}"
+                         [(ngModel)]="Customer.Isin" name="Isin" id="Isin" maxlength="12">
+                </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                <label class="md-check">
+                  <input type="checkbox">
+                  <i class="indigo"></i>
+                  Checkbox
+                </label>
+              </div>
+            </tcm-panel>
+          </tcm-card>
+        </div>
+      </split-area>
+      <split-area size="50">
+        <div class="col-md-12">
+          <tcm-card [options]="{title:'Fund Information', subtitle:'Edit fund information'}">
+
+
+            <tcm-panel [options]="{id:'panel-1', title:'Fund Information'}">
+
+
+              <div class="col-md-3">
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="{{ 'Name' | translate}}"
+                         id="name" name="name"
+                         [(ngModel)]="Customer.Name"
+                         [errorStateMatcher]="matcher" #name="ngModel"
+                         required maxlength="50">
+                  <mat-error *ngIf="name.invalid && (name.dirty || name.touched)">
+                    {{ 'Name' | translate}} is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="{{ 'ShortName' | translate}}"
+                         [(ngModel)]="Customer.ShortName" name="ShortName"
+                         id="ShortName">
+                </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="{{ 'LegalName' | translate}}"
+                         [(ngModel)]="Customer.LegalName" name="LegalName"
+                         id="LegalName">
+                </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="{{ 'Isin' | translate}}"
+                         [(ngModel)]="Customer.Isin" name="Isin" id="Isin" maxlength="12">
+                </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="{{ 'ExternalId' | translate}}"
+                         [(ngModel)]="Customer.ExternalId" name="ExternalId"
+                         id="ExternalId">
+                </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="{{ 'ExternalIdSource' | translate}}"
+                         [(ngModel)]="Customer.ExternalIdSource" name="ExternalIdSource"
+                         id="ExternalIdSource">
+                </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="{{ 'ShareClass' | translate}}"
+                         [(ngModel)]="Customer.ShareClassId" name="ShareClassId"
+                         id="ShareClassId">
+                </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="{{ 'UmbrellaName' | translate}}"
+                         [(ngModel)]="Customer.UmbrellaName" name="UmbrellaName"
+                         id="UmbrellaName">
+                </mat-form-field>
+              </div>
+              <div class="col-sm-3">
+                <mat-form-field>
+                  <mat-select (change)="changeCountry($event)" placeholder="{{'Country' | translate}}" [(value)]="Customer.CountryCode">
+                    <mat-option *ngFor="let option of GetStaticDataItems('COUNTRY')" [value]="option.Code">
+                      {{ option.Text }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                <mat-form-field>
+                  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3 input-group bootstrap-timepicker timepicker">
+                <input id="Time" name="Time" [(ngModel)]="Customer.Time" matInput tcmtimePicker />
+              </div>
+            </tcm-panel>
+
+            <button (click)="sendMessage()" class="btn">TCMMessage</button>
+            <button (click)="ExecuteJS()" class="btn">ExecuteJS</button>
+            <button (click)="NavigateWithQueryParam()" class="btn">Navigate_QueryParam</button>
+            <button (click)="NavigateWithMandatoryParam()" class="btn">Navigate_MandatoryParam</button>
+            <button (click)="NavigateWithExtras()" class="btn">Navigate_Extras</button>
+            <button (click)="NavigateWithData()" class="btn">Navigate_Data</button>
+            <button (click)="NavigateWithFragment()" class="btn">Navigate_Fragment</button>
+
+            <button (click)="ShowToast()" class="btn btn-primary pull-right">Show Toast</button>
+            <button type="submit" [disabled]="!f.valid" class="btn btn-primary pull-right">Save</button>
+            <button (click)="FundSearch(content)" class="btn btn-primary pull-right">Search</button>
+            <button (click)="Close()" class="btn btn-primary pull-right">Close</button>
+            <button  [disabled]="!CanUpdate()" class="btn btn-primary pull-right">CanUpdate</button>
+            <button  [disabled]="!CanCreate()" class="btn btn-primary pull-right">CanCreate</button>
+            <div class="clearfix"></div>
+
+          </tcm-card>
+        </div>
+      </split-area>
+    </split>
+    <div class="footer-nav" style="width:100%;background-color:red">
+      Footer
+    </div>
+  </form>
+</div>
+
+<div class="card">
+  <div class="card-heading">
+    <h2>Basic Usage</h2>
+  </div>
+  <div class="card-body bg-dark">
+    <div class="row row-sm">
+      <div class="col-sm-6">
+        <div class="md-form-group">
+          <input class="md-input md-input-white" ng-model="user.title">
+          <label>Title</label>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="md-form-group">
+          <input class="md-input md-input-white" ng-model="user.email">
+          <label>Email</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="row row-sm">
+      <div class="col-sm-12">
+        <div class="md-form-group">
+          <input class="md-input" disabled ng-model="user.company">
+          <label>Company(disabled)</label>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="md-form-group float-label">
+          <input class="md-input" ng-model="user.firstName" required>
+          <label>First Name</label>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="md-form-group float-label">
+          <input class="md-input" ng-model="user.lastName" required>
+          <label>Last Name</label>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="md-form-group">
+          <input class="md-input" ng-model="user.address">
+          <label>Address</label>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="md-form-group">
+          <input class="md-input" ng-model="user.city">
+          <label>City</label>
+          <span class="md-input-msg right">30/30</span>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="md-form-group">
+          <input class="md-input" ng-model="user.state">
+          <label>State</label>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="md-form-group">
+          <input class="md-input" ng-model="user.postalCode">
+          <label>Postal Code</label>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="md-form-group">
+          <textarea class="md-input" ng-model="user.biography" rows="4"></textarea>
+          <label>Biography</label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <p>
+          <label class="md-check">
+            <input type="checkbox">
+            <i class="indigo"></i>
+            Checkbox
+          </label>
+        </p>
+        <p>
+          <label class="md-check">
+            <input type="checkbox" checked>
+            <i class="blue"></i>
+            Checkbox: checked
+          </label>
+        </p>
+        <p>
+          <label class="md-check">
+            <input type="checkbox" disabled>
+            <i class="indigo"></i>
+            Checkbox: disabled
+          </label>
+        </p>
+        <p>
+          <label class="md-check">
+            <input type="checkbox" checked disabled>
+            <i class="indigo"></i>
+            Checkbox: checked and disabled
+          </label>
+        </p>
+        <p>
+          <label class="md-check">
+            <input type="checkbox">
+            <i class="pink"></i>
+            Checkbox: pink
+          </label>
+        </p>
+        <p>
+          <label class="md-check">
+            <input type="checkbox" checked>
+            <i class="green"></i>
+            Checkbox: green
+          </label>
+        </p>
+        <p>
+          <label class="md-check">
+            <input type="checkbox" checked>
+            <i class="teal no-icon"></i>
+            Checkbox: no icon
+          </label>
+        </p>
+      </div>
+      <div class="col-sm-4">
+        <p>
+          <label class="md-check">
+            <input type="radio" name="radio">
+            <i class="indigo"></i>
+            Checkbox
+          </label>
+        </p>
+        <p>
+          <label class="md-check">
+            <input type="radio" name="radio" checked>
+            <i class="blue"></i>
+            Checkbox: checked
+          </label>
+        </p>
+        <p>
+          <label class="md-check">
+            <input type="radio" name="a" disabled>
+            <i class="indigo"></i>
+            Checkbox: disabled
+          </label>
+        </p>
+        <p>
+          <label class="md-check">
+            <input type="radio" name="a" checked disabled>
+            <i class="indigo"></i>
+            Checkbox: checked and disabled
+          </label>
+        </p>
+        <p>
+          <label class="md-check">
+            <input type="radio" name="radio">
+            <i class="pink"></i>
+            Checkbox: pink
+          </label>
+        </p>
+        <p>
+          <label class="md-check">
+            <input type="radio" checked name="b">
+            <i class="green"></i>
+            Checkbox: green
+          </label>
+        </p>
+        <p>
+          <label class="md-check">
+            <input type="radio" name="b">
+            <i class="teal no-icon"></i>
+            Checkbox: no icon
+          </label>
+        </p>
+      </div>
+      <div class="col-sm-4">
+        <p>
+          <label class="md-switch">
+            <input type="checkbox">
+            <i class="indigo"></i>
+            Switch
+          </label>
+        </p>
+        <p>
+          <label class="md-switch">
+            <input type="checkbox" checked>
+            <i class="blue"></i>
+            Switch: checked
+          </label>
+        </p>
+        <p>
+          <label class="md-switch">
+            <input type="checkbox" disabled>
+            <i class="blue"></i>
+            Switch: disabled
+          </label>
+        </p>
+        <p>
+          <label class="md-switch">
+            <input type="checkbox" checked disabled>
+            <i class="blue"></i>
+            Switch: checked and disabled
+          </label>
+        </p>
+        <p>
+          <label class="md-switch">
+            <input type="checkbox">
+            <i class="pink"></i>
+            Switch: pink
+          </label>
+        </p>
+        <p>
+          <label class="md-switch">
+            <input type="radio" name='switch' checked>
+            <i class="green"></i>
+            Switch: radio 1
+          </label>
+        </p>
+        <p>
+          <label class="md-switch">
+            <input type="radio" name='switch'>
+            <i class="orange"></i>
+            Switch: radio 2
+          </label>
+        <p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row padding">
+  <wrapper>
+    <span>This is not a counter</span>
+    <counter></counter>
+  </wrapper>
+  <wrapper>
+    <ng-container ngProjectAs="counter">
+      <counter></counter>
+    </ng-container>
+  </wrapper>
+</div>

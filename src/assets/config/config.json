@@ -1,0 +1,12 @@
+{
+  "WebApiUrl": "http://localhost:50704/api/",
+  "SignalRUrl": "http://localhost:58657",
+  "userPersistence": true,
+  "staticData": true,
+  "dashBoard": true,
+  "tcmMessages": true,
+  "updateRoles": "EU\\SG TCM XFM",
+  "createRoles": "tt",
+  "ServerLog": false,
+  "Authetication": "windows"
+}

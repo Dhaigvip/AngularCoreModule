@@ -1,0 +1,59 @@
+<mat-dialog-content>
+  <div id="info">
+    <p *ngIf="status == 1" id="info_start">Click on the microphone icon and begin speaking.</p>
+    <p *ngIf="status == 2" id="info_speak_now">Speak now.</p>
+    <p *ngIf="status == 3" id="info_no_speech">
+      No speech was detected. You may need to adjust your
+      <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
+        microphone settings
+      </a>.
+    </p>
+    <p *ngIf="status == 4" id="info_no_microphone" style="display:none">
+      No microphone was found. Ensure that a microphone is installed and that
+      <a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
+        microphone settings
+      </a> are configured correctly.
+    </p>
+    <p *ngIf="status == 5" id="info_allow">Click the "Allow" button above to enable your microphone.</p>
+    <p *ngIf="status == 6" id="info_denied">Permission to use microphone was denied.</p>
+    <p *ngIf="status == 7" id="info_blocked">
+      Permission to use microphone is blocked. To change,
+      go to chrome://settings/contentExceptions#media-stream
+    </p>
+    <p *ngIf="status == 8" id="info_upgrade">
+      Web Speech API is not supported by this browser.
+      Upgrade to <a href="//www.google.com/chrome">Chrome</a>
+      version 25 or later.
+    </p>
+  </div>
+  <div class="right">
+    <button id="start_button" (click)="startRecording($event)">
+      <img id="start_img" [src]="imagePath" alt="Start">
+    </button>
+    <button id="start_button" (click)="cleanData($event)">
+      X
+    </button>
+  </div>
+  <div id="results">
+    <div *ngFor="let item of searchObject; let i = index">
+      <select [(ngModel)]="item.SearchFieldId">
+        <option *ngFor="let c of options" [ngValue]="c">{{c}}</option>
+      </select>
+      <input type="text" [(ngModel)]="item.SearchValue" />
+      <br />
+    </div>
+  </div>
+  <div id="results">
+    <textarea rows="10" style="width: 100%; border: none;" id="final_span" [innerHtml]="final_transcript"></textarea>
+    <span id="interim_span" [innerHtml]="interim_transcript" class="interim"></span>
+    <p>
+  </div>
+  <div class="right">
+    <button class="btn btn-addon" (click)="updateSearch($event)">Update</button>
+    <button class="btn btn-accent" (click)="triggerSearch($event)">Search</button>
+  </div>
+  <div>
+
+  </div>
+</mat-dialog-content>
+

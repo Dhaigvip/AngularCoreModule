@@ -1,0 +1,10 @@
+<nav id="cd-vertical-nav">
+  <ul>
+    <li *ngFor="let item of VeticleRoutes, let idx = index">
+      <a (click)="onClick(item.id)">
+        <span class="cd-dot"></span>
+        <span class="cd-label">{{item.text}}</span>
+      </a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,23 @@
+{
+  "name": "tcm-base-module",
+  "version": "1.0.0",
+  "author": {
+    "name": "Vipul Dhaigude",
+    "email": "vipuldhaigude@gmail.com"
+  },
+  "scripts": {
+    "refreshVSToken ": "vsts-npm-auth -config .npmrc"
+  },
+  "keywords": [
+    "angular",
+    "tcm-base-module"
+  ],
+  "license": "MIT",
+  "module": "tcm-base-module.js",
+  "typings": "tcm-base-module.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^5.1.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}

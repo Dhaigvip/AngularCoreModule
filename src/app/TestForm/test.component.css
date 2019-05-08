@@ -1,0 +1,22 @@
+:host {
+  display: block;
+  width: 100%;
+  margin: 50px 0;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/*.mat-tooltip {
+  width: 120px;
+  color: black !important;
+  background: #DEFDFF;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 12px;
+  box-shadow: 2px 3px 7px grey;
+}*/

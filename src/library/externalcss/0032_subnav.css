@@ -1,0 +1,225 @@
+
+.subNav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  clear: both;
+  overflow: hidden
+}
+
+.hideNav.subNav > li {
+  display: none;
+  padding: 5px;
+  margin: -2px;
+  cursor: pointer
+}
+
+.subNav > li:first-child {
+  display: block
+}
+
+@media (min-width:768px) {
+  .hideNav.subNav > li, .subNav > li {
+    display: inline-block;
+    padding: 8px 5px;
+    /*margin: -2px;*/
+    cursor: pointer
+  }
+
+    .subNav > li:first-child {
+      display: inline-block
+    }
+}
+
+.subNav > li {
+  color: #333; /*margin: 0 -2px;*/
+  border-right: 1px solid /*#d5d5d5*/ #F3F3F3;
+  font-size: 14px;
+  padding: 8px 5px;
+}
+
+  .subNav > li a {
+    text-decoration: none
+  }
+/*.subNav li:first-child,.subNav li:first-child md-icon{background:#666;color: rgba(255,255,255,0.87);text-transform:uppercase}*/
+li:first-child {
+  margin-left: 0
+}
+
+.subNav .active {
+  /*background:  #EAEAEA;*/
+  cursor: default
+}
+
+.subNav {
+  background: /*#FAFAFA*/ #FFF
+}
+
+  .subNav > li, .navigation ul > li {
+    position: relative
+  }
+
+    .subNav > li.active > a:after, .navigation ul > li.active > a:after {
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      transform: scale(1);
+    }
+
+    .subNav > li > a:after, .navigation ul > li > a:after {
+      content: "";
+      height: 2px;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: -1px;
+      -webkit-transition: all;
+      -o-transition: all;
+      transition: all;
+      -webkit-transition-duration: 250ms;
+      transition-duration: 250ms;
+      -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+      -o-transform: scale(0);
+      transform: scale(0);
+    }
+
+    .subNav > li.active > a:after, .navigation ul > li.active > a:after {
+      background: #fc7652;
+    }
+
+  .subNav li {
+    font-size: 13px !important;
+  }
+
+  .subNav.l3 li {
+    font-size: 12px !important;
+  }
+
+  .subNav.l3 > li.active > a:after {
+    background: #19b176;
+  }
+
+.subNav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  clear: both;
+  overflow: hidden
+}
+
+.hideNav.subNav > li {
+  display: none;
+  padding: 5px;
+  margin: -2px;
+  cursor: pointer
+}
+
+.subNav > li:first-child {
+  display: block
+}
+
+@media (min-width:768px) {
+  .hideNav.subNav > li, .subNav > li {
+    display: inline-block;
+    padding: 8px 5px;
+    /*margin: -2px;*/
+    cursor: pointer
+  }
+
+    .subNav > li:first-child {
+      display: inline-block
+    }
+}
+
+.subNav > li {
+  color: #333; /*margin: 0 -2px;*/
+  border-right: 1px solid /*#d5d5d5*/ #F3F3F3;
+  font-size: 14px;
+  padding: 8px 5px;
+}
+
+  .subNav > li.active {
+    border-bottom-style: solid;
+    border-bottom-color: Highlight
+  }
+
+  .subNav > li a {
+    text-decoration: none
+  }
+/*.subNav li:first-child,.subNav li:first-child md-icon{background:#666;color: rgba(255,255,255,0.87);text-transform:uppercase}*/
+li:first-child {
+  margin-left: 0
+}
+
+
+
+.subNav > li, .navigation ul > li {
+  position: relative
+}
+
+  .subNav > li.active > a:after, .navigation ul > li.active > a:after {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+
+  .subNav > li > a:after, .navigation ul > li > a:after {
+    content: "";
+    height: 2px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -1px;
+    -webkit-transition: all;
+    -o-transition: all;
+    transition: all;
+    -webkit-transition-duration: 250ms;
+    transition-duration: 250ms;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+  }
+
+  .subNav > li.active > a:after, .navigation ul > li.active > a:after {
+    background: #fc7652;
+  }
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.subNav li {
+  font-size: 13px !important;
+}
+
+.subNav.l3 li {
+  font-size: 12px !important;
+}
+
+.subNav.l3 > li.active > a:after {
+  background: #19b176;
+}
+
+.subNav > li {
+  padding-right: 20px;
+  padding-left: 20px;
+}
